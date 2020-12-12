@@ -15,7 +15,7 @@ exports.getStates = async () => {
         return {messages, notifications, orders};
 
     }catch (err) {
-        return null;
         console.log(err);
+        return null;
     }
 };
