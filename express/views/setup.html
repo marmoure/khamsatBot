@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: column;
+        }
+        .center {
+            align-content: center;
+        }
+
+        .end {
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" method="POST" class="flex">
+        <fieldset class="center flex">
+            <label for="">facebook Page Access token</label>
+            <br>
+            <br>
+            <input name="access_token" type="text" placeholder="Access Token">
+        </fieldset>
+        <fieldset class="center flex">
+            <label for="">facebook Page verify token</label>
+            <br>
+            <br>
+            <input name="verify_token" type="text" placeholder="verify token">
+        </fieldset>
+        <button type="submit" class="end">Submit</button>
+    </form>
+</body>
+</html>

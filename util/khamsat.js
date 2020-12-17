@@ -1,11 +1,13 @@
+require('dotenv').config()
+
 const request = require("request-promise");
 
-exports.getStates = async () => {
+const getStates = async () => {
     try {
-        const res = await request.get("https://khamsat.com/ajax/account_stats",{
+        const res = await request.get(`https://khamsat.com/ajax/account_stats?_=${Date.now()}`,{
             headers: {
-                'Cookie': `rack.session=${process.env.COOKIE}`,
-            }
+                'Cookie':`rack.session=${process.env.COOKIE}`,
+            },
         });
         const response = JSON.parse(res);
         const messages = +response.unread_messages_count;
@@ -13,9 +15,9 @@ exports.getStates = async () => {
         const orders = +response.unread_orders_counts;
         
         return {messages, notifications, orders};
-
     }catch (err) {
-        console.log(err);
-        return null;
+        return Promise.reject(err);
     }
 };
+
+module.exports = getStates;
