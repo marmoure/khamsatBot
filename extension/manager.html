@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extension</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script src="script.js"></script>
+    <style>
+        .full-width {
+            width: 90%;
+        }
+
+        .flx {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <h3 class="flx">Login info</h3>
+            <label for="">Host ip</label>
+            <input class="full-width" type="text" name="host-ip">
+            <label for="">username</label>
+            <input class="full-width" type="text" name="username">
+            <label for="">password</label>
+            <input class="full-width" type="password" name="password">
+        </fieldset>
+        <fieldset>
+            <h3 class="flx">Facebook app info </h3>
+            <label for="">Page access token</label>
+            <input type="text" name="access-token" class="full-width">
+            <label for="">Page verify token</label>
+            <input type="text" name="verify-token" class="full-width">
+        </fieldset>
+        <fieldset disabled="disabled">
+            <label for="">Cookie</label>
+            <input class="full-width" type="text" id="cookie" name="cookie">
+        </fieldset>
+        <div class="flx">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
