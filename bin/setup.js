@@ -1,12 +1,13 @@
 const sequelize = require("../sequelize");
-const Accounts = require("../sequelize/models/account");
 
 sequelize.sync({force: true})
 .then( () => {
     console.log("DATABASE SETUP is done");
-    return Accounts.create({
+    return sequelize.models.account.create({
         username:"admin",
         password:"admin",
+        keepOn:false,
+        autoReply:false,
     });
 })
 .then(() => {

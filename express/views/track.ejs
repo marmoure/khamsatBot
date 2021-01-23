@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="css/track.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Track</title>
+</head>
+<body>
+    <%- include("header") %>
+    <div class="body--container">
+        <div class="list">
+            <% users.forEach(user => {%>
+            <form action="/untrack" method="POST" class="user">
+                <div class="user--detail">
+                    <img class="user--image" src=<%= user.img %> alt="">
+                    <span class="user--name"><%= user.name %></span>
+                </div>
+                <!-- <div class="user--detail">
+                    <span class="user--handler"><%= user.handler %></span>
+                </div> -->
+                <input type="hidden" name="id" value="<%= user.id %>">
+                <button type="submit"><i class="gg-trash"></i></button>
+            </form>
+            <%});%>
+            
+        </div>
+        <form action="/track" method="post">
+            <h2>Add a user to the tracking list</h2s>
+            <fieldset>
+                <input name="handler" type="text" placeholder="User Handler">
+                <button type="submit">Track User</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

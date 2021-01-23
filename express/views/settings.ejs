@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <title>Settings</title>
+</head>
+<body>
+    <%- include("header") %>
+    <div class="body--container">
+        <fieldset class="account-settings">
+            <h1>Account Settings</h1>
+            <form action="/settings" method="POST">
+                <fieldset class="flx">
+                    <label for="">Keep On</label>
+                    <label class="switch">
+                        <input id="keep-on" name="keepOn" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                </fieldset>
+                <fieldset class="flx">
+                    <label for="">Auto Reply</label>
+                    <label class="switch">
+                        <input id="auto-reply" name="autoReply" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                </fieldset>
+                <fieldset>
+                    <label for="">Auto Reply</label>
+                    <textarea dir="auto" name="replyMsg" id="" cols="50" rows="10"></textarea>
+                </fieldset>
+                <button type="submit">Update</button>
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        document.getElementById("keep-on").checked = <%= keepOn %>
+        document.getElementById("auto-reply").checked = <%= autoReply %>
+    </script>
+</body>
+</html>

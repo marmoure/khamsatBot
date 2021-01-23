@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>extension</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <script src="script.js"></script>
+
     <style>
         .full-width {
             width: 90%;
@@ -17,15 +17,18 @@
             display: flex;
             justify-content: center;
         }
+        .readonly {
+            pointer-events:'none';
+        }
     </style>
 </head>
 
 <body>
-    <form action="" method="post">
+    <form id="form" action="/" method="post">
         <fieldset>
             <h3 class="flx">Login info</h3>
             <label for="">Host ip</label>
-            <input class="full-width" type="text" name="host-ip">
+            <input class="full-width" type="text" id="host-ip" name="host-ip">
             <label for="">username</label>
             <input class="full-width" type="text" name="username">
             <label for="">password</label>
@@ -38,14 +41,15 @@
             <label for="">Page verify token</label>
             <input type="text" name="verify-token" class="full-width">
         </fieldset>
-        <fieldset disabled="disabled">
-            <label for="">Cookie</label>
-            <input class="full-width" type="text" id="cookie" name="cookie">
+        <fieldset >
+            <label for="">Cookie: auto generated from your browser</label>
+            <input tabindex="-1" class="readonly full-width" type="text" id="cookie" readonly name="cookie">
         </fieldset>
         <div class="flx">
             <button type="submit">Submit</button>
         </div>
     </form>
+    <script src="script.js"></script>
 </body>
 
 </html>

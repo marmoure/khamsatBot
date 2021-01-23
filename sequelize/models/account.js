@@ -16,4 +16,10 @@ module.exports = (sequelize) =>
             type: Sequelize.INTEGER,
             allowNull: false,
         },
+        keepOn: {
+            type: Sequelize.BOOLEAN,
+        },
+        autoReply: {
+            type: Sequelize.BOOLEAN,
+        },
     });

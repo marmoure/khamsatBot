@@ -6,7 +6,7 @@ module.exports = (sequelize) =>
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: true,
+            allowNull: false,
         },
         name: {
             type: Sequelize.STRING,
@@ -16,17 +16,8 @@ module.exports = (sequelize) =>
             type: Sequelize.STRING,
             allowNull: false,
         },
-        state: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-        tracking: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-        avatar: {
+        img: {
             type: Sequelize.STRING,
-            allowNull: false,
-        }
-
+            allowNull: true,
+        },
     });

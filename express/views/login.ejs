@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>login</title>
+    <style>
+        .body--container {
+            font-size: large;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flx {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .form {
+            width: min-content;
+            /* margin-top: 15%; */
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #0096bfab ;
+        }
+        .fixed-width {
+            width: min-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="body--container">
+        <form class="flx form" action="/login" method="post">
+            <fieldset class="fixed-width">
+                <label for="">Username</label>
+                <input type="text" name="username">
+            </fieldset>
+            <fieldset class="fixed-width">
+                <label for="">Password</label>
+                <input type="password" name="password">
+            </fieldset>
+
+                <button type="submit">Login</button>
+
+        </form>
+    </div>
+</body>
+</html>

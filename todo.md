@@ -1,9 +1,9 @@
 # app
 - [ ] api
-- [ ] auth
+- [x] auth
 - [ ] interval
   
- 
+
 # khamsat
 - [x] get State
 - [ ] reply if new user
@@ -14,12 +14,15 @@
 - [ ] receive message and set the id to send to
 
 # UI
-- [ ] login page
 - [ ] requirements page with instructions
+- [x] settings page
+- [x] login page
+- [x] user Tracking
 
 # cookie extension
-- [ ] background script
-- [ ] UI 
+- [x] background script
+- [x] extract cookie
+- [x] UI 
 
 # setup
 - [x] create database

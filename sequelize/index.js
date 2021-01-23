@@ -5,6 +5,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize({
     dialect:'sqlite',
     storage: path.join(__dirname,"../data/db.sqlite"),
+    logging: false
 });
 
 
@@ -12,7 +13,7 @@ const modelDefiners = [
     require("./models/messages"),
     require("./models/states"),
     require("./models/users"),
-    require("./models/accounts"),
+    require("./models/account"),
 ];
 
 // define all models
