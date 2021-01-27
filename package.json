@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node bin/www",
-    "clean": "node bin/setup",
+    "setup": "node bin/setup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
+    "ngrok": "^3.4.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "sequelize": "^6.3.5",

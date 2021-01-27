@@ -26,5 +26,5 @@
 
 # setup
 - [x] create database
-- [ ] require fb token and khamsat cookie  
-- [ ] ssl
+- [ ] UI
+- [ ] use ngrok to get facebook id

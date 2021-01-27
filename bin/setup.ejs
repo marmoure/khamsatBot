@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Setup</title>
+    <style>
+        body {
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create a facebook page</h1>
+    <div>
+        <ol>
+            <li>Go to <a href="https://www.facebook.com/pages/create" target="_blank" rel="noopener noreferrer">Create facebook page</a> </li>
+            <li>Create a page with whatever name you like</li>
+            <li>Go to <a href="https://developers.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook Developer</a></li>
+            <li>
+                <ol>
+                    <li>Press get started</li>
+                    <li>Complete the registration process</li>
+                    <li>add messenger as product</li>
+                    <li>add your page</li>
+                    <li>generate page access token and set the token
+                        <form action="/token" method="post">
+                            <input type="text" name="token">
+                            <button type="submit">Set Token</button>
+                        </form>
+                    </li>
+                    <li>fill in the callback url and verification token</li>
+                    <li>
+                        <div>url: <%= url+"/webhook" %></div>
+                        <div>token: <%= verification %></div>
+                    </li>
+                    <li>Add subscriptions: messages and messages post_back</li>
+                    <li>send a message to the page to grab your id</li>
+                </ol>
+            </li>
+        </ol>
+    </div>  
+</body>
+</html>

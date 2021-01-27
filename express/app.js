@@ -25,7 +25,6 @@ app.use("/",appRoute);
 
 
 app.use((req, res, next) => {
-    // res.status(404).send("NOT FOUND (╯°□°）╯︵ ┻━┻ ");
     res.redirect("login");
 });
 

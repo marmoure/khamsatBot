@@ -13,7 +13,7 @@ module.exports = (sequelize) =>
             allowNull: false,
         },
         password: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
             allowNull: false,
         },
         keepOn: {
@@ -22,4 +22,10 @@ module.exports = (sequelize) =>
         autoReply: {
             type: Sequelize.BOOLEAN,
         },
+        messenger_id: {
+            type: Sequelize.STRING,
+        },
+        access_token: {
+            type: Sequelize.STRING,
+        }
     });
