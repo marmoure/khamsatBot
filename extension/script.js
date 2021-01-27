@@ -7,5 +7,5 @@ chrome.cookies.getAll({}, function (cookies) {
 
 document.getElementById("host-ip").addEventListener("input",(e) => {
      let url = e.target.value.trim();
-     document.getElementById("form").action = `http://${url}/api/post`;
+     document.getElementById("form").action = `${url}/api/cookie`;
 })

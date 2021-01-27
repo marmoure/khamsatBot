@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+    <% if(!cookie) {%>
     <h1>Create a facebook page</h1>
     <div>
         <ol>
@@ -27,7 +28,7 @@
                     <li>generate page access token and set the token
                         <form action="/token" method="post">
                             <input type="text" name="token">
-                            <button type="submit">Set Token</button>
+                            <button type="submit" <%= token? "disabled" : "" %> >Set Token</button>
                         </form>
                     </li>
                     <li>fill in the callback url and verification token</li>
@@ -39,7 +40,13 @@
                     <li>send a message to the page to grab your id</li>
                 </ol>
             </li>
+            <li>Use the extension to get the cookie</li>
+            <li>no need to set the user and the pass</li>
+            <li>url: <%= url %></li>
         </ol>
-    </div>  
+    </div> 
+    <%} else {%>
+        <h1>Success</h1>
+    <% } %>
 </body>
 </html>

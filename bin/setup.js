@@ -18,7 +18,7 @@ app.set("views","bin");
         await sequelize.sync({ force: true });
         console.log("DATABASE SETUP is done");
         const verification = Math.random().toString(36).slice(2,12); 
-        
+
         const user = await sequelize.models.account.create({
             username: "admin",
             password: "admin",
@@ -40,7 +40,7 @@ app.set("views","bin");
                     where: { id: 1 }
                 }
             );
-            await sendTextMessage(req.sender, "setup Done",user.access_token);
+            await sendTextMessage(req.sender, "facebook setup Done\n now send the cookie",user.access_token);
             await sequelize.models.account.update(
                 {
                     messenger_id: req.sender
@@ -50,15 +50,20 @@ app.set("views","bin");
                 }
             );
             res.sendStatus(200);
-            console.log("setup Done");
-            process.exit(0);
         });
 
         
-        app.get("/",(req, res, next) => {
+        app.get("/", async (req, res, next) => {
+            const user = await sequelize.models.account.findOne(
+                {
+                    where: { id: 1 }
+                }
+            );
             res.render("setup",{
                 url,
-                verification
+                verification,
+                token: !!user.verify_token,
+                cookie: !!user.cookie,
             });
         });
 
@@ -66,6 +71,18 @@ app.set("views","bin");
             const user = await sequelize.models.account.update(
                 {
                     access_token: req.body.token
+                }
+                , {
+                    where: { id:1 },
+                }
+            );
+            res.redirect("/");
+        });
+
+        app.post("/api/cookie", async (req, res, next) => {
+            const user = await sequelize.models.account.update(
+                {
+                    cookie: req.body.cookie
                 }
                 , {
                     where: { id:1 },

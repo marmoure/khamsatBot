@@ -27,5 +27,8 @@ module.exports = (sequelize) =>
         },
         access_token: {
             type: Sequelize.STRING,
+        },
+        cookie: {
+            type: Sequelize.STRING,
         }
     });

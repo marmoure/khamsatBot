@@ -44,6 +44,7 @@ exports.postWebhook = (req, res, next) => {
         req.sender = sender;
         if (event.message && event.message.text) {
             let text = event.message.text;
+            req.message = text;
         };
     }
     next();

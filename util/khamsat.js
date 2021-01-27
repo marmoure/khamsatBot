@@ -154,12 +154,7 @@ const getUserData = async (handler) => {
         const $ = cheerio.load(res);
         let name = $("title").text().split("-")[0].trim();
         let imgUrl = $(".u-circle.img-shadow").attr("src");
-        // const img = await request.get(imgUrl,{
-        //     encoding: null,
-        //     resolveWithFullResponse: true
-        // })
-        // const imgPath = path.join(__dirname,"../express/public/images/") + handler + ".png";
-        // await fs.writeFile(imgPath,img.body);
+
         return {
             name,
             imgUrl
