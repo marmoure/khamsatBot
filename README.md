@@ -5,11 +5,11 @@
 a web scraper designed to create better UX for the khamsat site 
 
 ## features
-this bot depends heavly on messenger all notifactions are sent to your account 
-- Track Users to check active state (if you adda user to the tracking list you ll get a message when ever the user is online)
-- Auto reply for new messages 
-- keep you acount online 24/7 (may be counter productive)
-- send updates from your account to messenger notifactions,messagesand orders
+this bot heavily depends on messenger, all notifications are sent to your account 
+- Track users to check active state (if you add a user to the tracking list you'll get a message when ever the user is online)
+- Auto reply to new messages 
+- keeps your a count online 24/7 (maybe counter-productive)
+- send updates from your account to messenger notifications, messages and orders
 
 ## setup
 clone the repo
